@@ -1,6 +1,6 @@
 # main file
-- name: Install {{component}}
-  hosts: { { component } }
+- name: "Install {{component}}"
+  hosts: "{{component}}"
   become: yes
   roles:
-    - { { component } }
+    - "{{component}}"
