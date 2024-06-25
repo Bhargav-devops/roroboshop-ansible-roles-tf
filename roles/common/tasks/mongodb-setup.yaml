@@ -17,9 +17,13 @@
   register: user_count
   when: component == "user"
 
-- name: print the count
+- name: print the product count
   ansible.builtin.debug:
-    msg: "product count {{entries_count}}"
+    msg: " Product count {{products_count}}"
+
+- name: print the user count
+  ansible.builtin.debug:
+    msg: " Product count {{user_count}}"
 
 - name: "Load catalogue data into mongodb"
   ansible.builtin.shell: "mongo --host mongodb.bhargavdevops.online < /app/schema/{{component}}.js"
