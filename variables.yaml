@@ -1,1 +1,10 @@
 MONGODB_HOST: mongodb.bhargavdevops.online
+REDIS_HOST: redis.bhargavdevops.online
+USER_HOST: user.bhargavdevops.online
+CATALOGUE_HOST: catalogue.bhargavdevops.online
+CART_HOST: cart.bhargavdevops.online
+MYSQL_HOST: mysql.bhargavdevops.online
+SHIPPING_HOST: shipping.bhargavdevops.online
+PAYMENT_HOST: payment.bhargavdevops.online
+RABBITMQ_HOST: rabbitmq.bhargavdevops.online
+DISPATCH_HOST: dispatch.bhargavdevops.online
