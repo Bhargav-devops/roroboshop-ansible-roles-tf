@@ -13,4 +13,9 @@
 - name: importing systemd yaml
   ansible.builtin.import_role:
     name: common
-    tasks_from: systemd.yaml
+    tasks_from: systemd
+- name: importing systemd yaml
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: deployment
+  tags: deployment
