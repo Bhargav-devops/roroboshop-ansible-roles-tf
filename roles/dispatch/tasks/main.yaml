@@ -2,14 +2,11 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: app-setup
-- name: importing nodejs yaml
+- name: importing go-setup yaml
   ansible.builtin.import_role:
     name: common
-    tasks_from: nodejs
-- name: importing mongodb-setup yaml
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: mongodb-setup
+    tasks_from: go-setup
+
 - name: importing systemd yaml
   ansible.builtin.import_role:
     name: common
