@@ -13,7 +13,7 @@
   when: component == "catalogue"
 
 - name: get users count
-  ansible.builtin.command: mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
+  ansible.builtin.command: mongo --host {{MONGODB_H0ST}} --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
   register: user_count
   when: component == "user"
 
@@ -27,10 +27,10 @@
 
 - name: "Load catalogue data into mongodb"
   ansible.builtin.shell: "mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js"
-  when: products_count.stdout == "0" and component == "catalogue"
+  when: component == "catalogue" and products_count.stdout == "0"
   #ignore_errors: true
 
 - name: "Load user data into mongodb"
   ansible.builtin.shell: "mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js"
-  when: user_count.stdout == "0" and component == "user"
+  when: component == "user" and user_count.stdout == "0"
   #ignore_errors: true
