@@ -13,7 +13,7 @@
   when: component == "catalogue"
 
 - name: get users count
-  ansible.builtin.command: mongo --host {{MONGODB_H0ST}} --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
+  ansible.builtin.command: mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
   register: user_count
   when: component == "user"
 
