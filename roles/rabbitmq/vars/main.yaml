@@ -1,0 +1,5 @@
+#roboshop roboshop123
+robo_user: roboshop
+robo_password: roboshop123
+#to encrypt the file use cmd
+# ansible-vault encrypt ./vars/main.yaml
