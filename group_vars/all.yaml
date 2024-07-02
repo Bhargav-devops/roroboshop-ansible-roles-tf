@@ -1,2 +1,4 @@
 ansible_user: centos
 ansible_password: DevOps321
+#to encrypt the file use cmd
+# ansible-vault encrypt group_vars/all.yaml
