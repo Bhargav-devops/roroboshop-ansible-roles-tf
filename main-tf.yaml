@@ -1,0 +1,9 @@
+# main file
+- name: "Install {{component}}"
+  hosts: localhost
+  become: yes
+  connection: localhost
+  vars_files:
+    - variables-{{env}}.yaml
+  roles:
+    - "{{component}}"
