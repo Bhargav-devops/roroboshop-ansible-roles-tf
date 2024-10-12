@@ -16,6 +16,14 @@
     state: started
     enabled: yes
 
+- name: Retrieve MySQL root password
+  set_fact:
+    mysql_root_password: "{{ lookup('aws_ssm', '/roboshop/' + env + '/mysql_root_password', region='us-east-1', decrypt=True) }}"
+
+- name: Debug the retrieved password
+  debug:
+    msg: "Retrieved MySQL root password: {{ mysql_root_password }}"
+
 - name: Changing the default root password
   ansible.builtin.command: >
     "mysql_secure_installation --set-root-pass {{ lookup('aws_ssm', '/roboshop/' + env + '/mysql_root_password', region='us-east-1', decrypt=True) }}"
