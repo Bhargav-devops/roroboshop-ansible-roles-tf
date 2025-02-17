@@ -4,8 +4,11 @@
     state: present
     disable_gpg_check: true
     skip_broken: yes
-- name: enable redis 6.2
-  ansible.builtin.command: dnf module enable redis:remi-6 -y
+#temporary change for redis working
+# - name: enable redis 6.2
+#   ansible.builtin.command: dnf module enable redis:remi-6.2 -y
+- name: enable redis 6
+  ansible.builtin.command: dnf module enable redis:6 -y
 - name: install redis
   ansible.builtin.dnf:
     name: redis
